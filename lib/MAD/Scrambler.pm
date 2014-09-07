@@ -1,5 +1,5 @@
 package MAD::Scrambler;
-$MAD::Scrambler::VERSION = '0.000001';
+$MAD::Scrambler::VERSION = '0.000002';
 use Moo;
 extends 'Exporter';
 
@@ -102,7 +102,7 @@ MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 =head1 VERSION
 
-version 0.000001
+version 0.000002
 
 =head1 SYNOPSIS
 
@@ -123,7 +123,7 @@ Definitely it is not a cryptographic hash, it is just of reversible shuffle.
     ## 42
 
 Very useful for example when you need to expose a reference to a object into
-a database in a URL, but you don't want expose the primary key itself.
+a database in a URL, but you don't want expose the original data.
 
 Note that this is not for solving security problems, sure, since this is
 reversible and someone can extract back the original value.
@@ -146,9 +146,16 @@ when you decode a previously encoded number.
 C<bit_mask> is a 32-bit value to be "XORed" with the new scrambled number
 when encoding or decoding.
 
+If any args are not provided then they will be randomly generated.
+
 =head2 encode( $number )
 
+Scrambles a number into a different one based on the attributes C<scrambler>
+and C<bit_mask>.
+
 =head2 decode( $code )
+
+Reverses the encoding made by C<encode>.
 
 =head2 nibble_split( $number )
 

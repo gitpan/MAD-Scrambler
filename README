@@ -2,7 +2,7 @@ NAME
     MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 VERSION
-    version 0.000001
+    version 0.000002
 
 SYNOPSIS
     Scrambles a 32-bit integer with a kind of reversible hashing function.
@@ -23,8 +23,7 @@ SYNOPSIS
         ## 42
 
     Very useful for example when you need to expose a reference to a object
-    into a database in a URL, but you don't want expose the primary key
-    itself.
+    into a database in a URL, but you don't want expose the original data.
 
     Note that this is not for solving security problems, sure, since this is
     reversible and someone can extract back the original value.
@@ -45,8 +44,15 @@ METHODS
     "bit_mask" is a 32-bit value to be "XORed" with the new scrambled number
     when encoding or decoding.
 
+    If any args are not provided then they will be randomly generated.
+
   encode( $number )
+    Scrambles a number into a different one based on the attributes
+    "scrambler" and "bit_mask".
+
   decode( $code )
+    Reverses the encoding made by "encode".
+
   nibble_split( $number )
     Splits apart the given number in eight nibbles. The least significant
     nibbles are put in the lowest indexes.
