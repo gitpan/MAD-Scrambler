@@ -1,5 +1,5 @@
 package MAD::Scrambler;
-$MAD::Scrambler::VERSION = '0.000002';
+$MAD::Scrambler::VERSION = '0.000003';
 use Moo;
 extends 'Exporter';
 
@@ -102,7 +102,7 @@ MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 =head1 VERSION
 
-version 0.000002
+version 0.000003
 
 =head1 SYNOPSIS
 
@@ -146,7 +146,7 @@ when you decode a previously encoded number.
 C<bit_mask> is a 32-bit value to be "XORed" with the new scrambled number
 when encoding or decoding.
 
-If any args are not provided then they will be randomly generated.
+If any argument is not supplied, it will be randomly generated.
 
 =head2 encode( $number )
 

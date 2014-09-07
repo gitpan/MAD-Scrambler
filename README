@@ -2,7 +2,7 @@ NAME
     MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 VERSION
-    version 0.000002
+    version 0.000003
 
 SYNOPSIS
     Scrambles a 32-bit integer with a kind of reversible hashing function.
@@ -44,7 +44,7 @@ METHODS
     "bit_mask" is a 32-bit value to be "XORed" with the new scrambled number
     when encoding or decoding.
 
-    If any args are not provided then they will be randomly generated.
+    If any argument is not supplied, it will be randomly generated.
 
   encode( $number )
     Scrambles a number into a different one based on the attributes
