@@ -1,10 +1,10 @@
-requires 'Const::Fast' => '0';
-requires 'Exporter'    => '0';
-requires 'List::Util'  => '0';
-requires 'Moo'         => '0';
+requires 'Const::Fast' => '0.014';
+requires 'Exporter'    => '5.70';
+requires 'List::Util'  => '1.41';
+requires 'Moo'         => '1.006001';
 
 on 'test' => sub {
-    requires 'Test::Most' => '0';
+    requires 'Test::Most' => '0.34';
 };
 
 on 'configure' => sub {

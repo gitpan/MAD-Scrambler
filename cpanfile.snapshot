@@ -94,6 +94,7 @@ DISTRIBUTIONS
     pathname: D/DA/DAGOLDEN/Class-Tiny-1.000.tar.gz
     provides:
       Class::Tiny 1.000
+      Class::Tiny::Object 1.000
     requirements:
       Carp 0
       ExtUtils::MakeMaker 6.17
@@ -329,6 +330,7 @@ DISTRIBUTIONS
     pathname: C/CH/CHORNY/Hook-LexWrap-0.24.tar.gz
     provides:
       Hook::LexWrap 0.24
+      Hook::LexWrap::Cleanup 0.24
     requirements:
       Test::More 0
       perl 5.006
@@ -385,7 +387,6 @@ DISTRIBUTIONS
   Mixin-Linewise-0.106
     pathname: R/RJ/RJBS/Mixin-Linewise-0.106.tar.gz
     provides:
-      MLTests undef
       Mixin::Linewise 0.106
       Mixin::Linewise::Readers 0.106
       Mixin::Linewise::Writers 0.106
@@ -449,10 +450,10 @@ DISTRIBUTIONS
       Text::ParseWords 0
       perl 5.008000
       version 0.87
-  Module-Build-Tiny-0.038
-    pathname: L/LE/LEONT/Module-Build-Tiny-0.038.tar.gz
+  Module-Build-Tiny-0.039
+    pathname: L/LE/LEONT/Module-Build-Tiny-0.039.tar.gz
     provides:
-      Module::Build::Tiny 0.038
+      Module::Build::Tiny 0.039
     requirements:
       CPAN::Meta 0
       DynaLoader 0
@@ -496,34 +497,35 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  Moo-1.006000
-    pathname: H/HA/HAARG/Moo-1.006000.tar.gz
+  Moo-1.006001
+    pathname: H/HA/HAARG/Moo-1.006001.tar.gz
     provides:
       Method::Generate::Accessor undef
       Method::Generate::BuildAll undef
       Method::Generate::Constructor undef
       Method::Generate::DemolishAll undef
       Method::Inliner undef
-      Moo 1.006000
+      Moo 1.006001
       Moo::HandleMoose undef
       Moo::HandleMoose::FakeConstructor undef
       Moo::HandleMoose::FakeMetaClass undef
       Moo::HandleMoose::_TypeMap undef
       Moo::Object undef
-      Moo::Role 1.006000
+      Moo::Role 1.006001
       Moo::_Utils undef
       Moo::_mro undef
       Moo::sification undef
-      Sub::Defer 1.006000
-      Sub::Quote 1.006000
+      Sub::Defer 1.006001
+      Sub::Quote 1.006001
       oo undef
     requirements:
       Class::Method::Modifiers 1.1
       Devel::GlobalDestruction 0.11
+      Exporter 5.57
       ExtUtils::MakeMaker 0
       Import::Into 1.002
       Module::Runtime 0.014
-      Role::Tiny 1.003003
+      Role::Tiny 1.003004
       Scalar::Util 0
       perl 5.006
       strictures 1.004003
@@ -811,7 +813,7 @@ DISTRIBUTIONS
     pathname: D/DA/DAGOLDEN/Path-Tiny-0.056.tar.gz
     provides:
       Path::Tiny 0.056
-      flock undef
+      Path::Tiny::Error 0.056
     requirements:
       Carp 0
       Cwd 0
@@ -1027,6 +1029,9 @@ DISTRIBUTIONS
       Perl::Critic::Utils::Perl 1.122
       Perl::Critic::Violation 1.122
       Test::Perl::Critic::Policy 1.122
+      declaration 1.122
+      statement 1.122
+      subroutine 1.122
     requirements:
       B::Keywords 1.05
       Carp 0
@@ -1085,21 +1090,29 @@ DISTRIBUTIONS
     pathname: S/SH/SHANCOCK/Perl-Tidy-20140711.tar.gz
     provides:
       Perl::Tidy 20140711
+      Perl::Tidy::Debugger 20140711
       Perl::Tidy::DevNull 20140711
       Perl::Tidy::Diagnostics 20140711
+      Perl::Tidy::FileWriter 20140711
+      Perl::Tidy::Formatter 20140711
       Perl::Tidy::HtmlWriter 20140711
       Perl::Tidy::IOScalar 20140711
       Perl::Tidy::IOScalarArray 20140711
+      Perl::Tidy::IndentationItem 20140711
+      Perl::Tidy::LineBuffer 20140711
       Perl::Tidy::LineSink 20140711
       Perl::Tidy::LineSource 20140711
       Perl::Tidy::Logger 20140711
+      Perl::Tidy::Tokenizer 20140711
+      Perl::Tidy::VerticalAligner 20140711
+      Perl::Tidy::VerticalAligner::Alignment 20140711
+      Perl::Tidy::VerticalAligner::Line 20140711
     requirements:
       ExtUtils::MakeMaker 0
   PerlIO-utf8_strict-0.004
     pathname: L/LE/LEONT/PerlIO-utf8_strict-0.004.tar.gz
     provides:
       PerlIO::utf8_strict 0.004
-      t::Util undef
     requirements:
       Carp 0
       Exporter 0
@@ -1133,14 +1146,7 @@ DISTRIBUTIONS
   Pod-Coverage-TrustPod-0.100003
     pathname: R/RJ/RJBS/Pod-Coverage-TrustPod-0.100003.tar.gz
     provides:
-      BaseWithNoPod undef
-      ChildWithPod undef
-      NoCoverage undef
       Pod::Coverage::TrustPod 0.100003
-      PodFor undef
-      PodPrivate undef
-      TrustMe undef
-      TrustStar undef
     requirements:
       ExtUtils::MakeMaker 6.30
       Pod::Coverage::CountParents 0
@@ -1193,20 +1199,33 @@ DISTRIBUTIONS
     pathname: S/SA/SANKO/Readonly-2.00.tar.gz
     provides:
       Readonly 2.00
+      Readonly::Array 2.00
+      Readonly::Hash 2.00
+      Readonly::Scalar 2.00
     requirements:
       CPAN::Meta 0
       CPAN::Meta::Prereqs 0
       ExtUtils::CBuilder 0
       Module::Build 0.38
       perl v5.6.0
-  Role-Tiny-1.003003
-    pathname: H/HA/HAARG/Role-Tiny-1.003003.tar.gz
+  Role-Tiny-1.003004
+    pathname: H/HA/HAARG/Role-Tiny-1.003004.tar.gz
     provides:
-      Role::Tiny 1.003003
-      Role::Tiny::With 1.003003
+      Role::Tiny 1.003004
+      Role::Tiny::With 1.003004
     requirements:
       Exporter 5.57
       perl 5.006
+  Scalar-List-Utils-1.41
+    pathname: P/PE/PEVANS/Scalar-List-Utils-1.41.tar.gz
+    provides:
+      List::Util 1.41
+      List::Util::XS 1.41
+      Scalar::Util 1.41
+      Sub::Util 1.41
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   String-Format-1.17
     pathname: D/DA/DARREN/String-Format-1.17.tar.gz
     provides:
@@ -1219,13 +1238,6 @@ DISTRIBUTIONS
     provides:
       Sub::Exporter 0.987
       Sub::Exporter::Util 0.987
-      Test::SubExporter::DashSetup undef
-      Test::SubExporter::Faux undef
-      Test::SubExporter::GroupGen undef
-      Test::SubExporter::GroupGenSubclass undef
-      Test::SubExporter::ObjGen undef
-      Test::SubExporter::ObjGen::Obj undef
-      Test::SubExporter::s_e undef
     requirements:
       Carp 0
       Data::OptList 0.100
@@ -1481,10 +1493,7 @@ DISTRIBUTIONS
   Text-Diff-1.41
     pathname: O/OV/OVID/Text-Diff-1.41.tar.gz
     provides:
-      Text::Diff 1.41
-      Text::Diff::Base 1.41
-      Text::Diff::Config 1.41
-      Text::Diff::Table 1.41
+      Text::Diff undef
     requirements:
       Algorithm::Diff 1.19
       Exporter 0
@@ -1493,7 +1502,6 @@ DISTRIBUTIONS
     pathname: I/IL/ILMARI/bareword-filehandles-0.003.tar.gz
     provides:
       bareword::filehandles 0.003
-      inc::BarewordFilehandlesMakeMaker undef
     requirements:
       B::Hooks::OP::Check 0
       ExtUtils::Depends 0
@@ -1515,8 +1523,6 @@ DISTRIBUTIONS
   multidimensional-0.011
     pathname: I/IL/ILMARI/multidimensional-0.011.tar.gz
     provides:
-      MyTest undef
-      inc::MultidimensionalMakeMaker undef
       multidimensional 0.011
     requirements:
       B::Hooks::OP::Check 0.19

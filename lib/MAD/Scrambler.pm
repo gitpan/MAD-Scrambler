@@ -1,5 +1,7 @@
 package MAD::Scrambler;
-$MAD::Scrambler::VERSION = '0.000003';
+$MAD::Scrambler::VERSION = '0.000004';
+## no critic (Bangs::ProhibitBitwiseOperators)
+
 use Moo;
 extends 'Exporter';
 
@@ -12,12 +14,17 @@ use List::Util qw{ shuffle };
 
 use Const::Fast;
 
-const our $MAX_NUMBER => 2**32;
+const our $MAX_BIT_MASK => 2**32;
+
+const my $MIN_BIT     => 0;
+const my $MAX_BIT     => 7;
+const my $NIBBLE_SIZE => 4;
+const my $NIBBLE_MASK => 0x0000000f;
 
 has 'scrambler' => (
     is      => 'ro',
     lazy    => 1,
-    default => sub { [ shuffle 0 .. 7 ] },
+    default => sub { [ shuffle $MIN_BIT .. $MAX_BIT ] },
 );
 
 has 'unscrambler' => (
@@ -29,7 +36,7 @@ has 'unscrambler' => (
         my @scrambler   = @{ $self->scrambler };
         my @unscrambler = ();
 
-        for ( 0 .. 7 ) {
+        for ( $MIN_BIT .. $MAX_BIT ) {
             $unscrambler[ $scrambler[$_] ] = $_;
         }
 
@@ -39,7 +46,7 @@ has 'unscrambler' => (
 
 has 'bit_mask' => (
     is      => 'ro',
-    default => sub { int rand $MAX_NUMBER },
+    default => sub { int rand $MAX_BIT_MASK },
 );
 
 sub encode {
@@ -68,8 +75,8 @@ sub nibble_split {
     my ($number) = @_;
 
     my @nibbles;
-    for ( 0 .. 7 ) {
-        $nibbles[$_] = ( $number >> ( $_ * 4 ) ) & 0x0000000f;
+    for ( $MIN_BIT .. $MAX_BIT ) {
+        $nibbles[$_] = ( $number >> ( $_ * $NIBBLE_SIZE ) ) & $NIBBLE_MASK;
     }
 
     return @nibbles;
@@ -79,8 +86,8 @@ sub nibble_join {
     my (@nibbles) = @_;
 
     my $number = 0;
-    for ( 0 .. 7 ) {
-        $number = $number | ( $nibbles[$_] << ( $_ * 4 ) );
+    for ( $MIN_BIT .. $MAX_BIT ) {
+        $number = $number | ( $nibbles[$_] << ( $_ * $NIBBLE_SIZE ) );
     }
 
     return $number;
@@ -102,7 +109,7 @@ MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 =head1 VERSION
 
-version 0.000003
+version 0.000004
 
 =head1 SYNOPSIS
 

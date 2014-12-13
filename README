@@ -2,7 +2,7 @@ NAME
     MAD::Scrambler - Scramble nibbles of a 32-bit integer
 
 VERSION
-    version 0.000003
+    version 0.000004
 
 SYNOPSIS
     Scrambles a 32-bit integer with a kind of reversible hashing function.

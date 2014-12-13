@@ -3,22 +3,22 @@ abstract: 'Scramble nibbles of a 32-bit integer'
 author:
   - 'Blabos de Blebe <blabos@cpan.org>'
 build_requires:
-  Test::Most: '0'
+  Test::Most: '0.34'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
 name: MAD-Scrambler
 requires:
-  Const::Fast: '0'
-  Exporter: '0'
-  List::Util: '0'
-  Moo: '0'
+  Const::Fast: '0.014'
+  Exporter: '5.70'
+  List::Util: '1.41'
+  Moo: '1.006001'
 resources:
   bugtracker: https://github.com/blabos/MAD-Scrambler/issues
   repository: https://github.com/blabos/MAD-Scrambler
-version: '0.000003'
+version: '0.000004'
